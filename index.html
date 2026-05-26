@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	
+
+<title>Patrice Stutz Aquarelles</title>
+
+<meta name="author" content="Patrice Stutz">
+<meta name="description" content="Aquarelles et huiles de paysages urbains, paysages, intérieurs et divers.">
+<meta name="keywords" content="art, artistique, peinture, aquarelle, watercolour, art contemporain, paysages urbains">
+
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .menu {
+        list-style: none;
+        margin: 15;
+        padding: 0;
+        background-color: #FFFFFF;
+        display: flex;
+        justify-content: left;
+    }
+
+    .menu li {
+        margin: 0;
+    }
+
+    .menu a {
+        display: block;
+        padding: 15px 25px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .menu a:hover {
+        color: #279E9C;
+    }
+	
+	
+/* BOUTON BURGER */
+.burger {
+    display: none;
+    font-size: 30px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* VERSION SMARTPHONE */
+@media screen and (max-width: 768px) {
+
+    .burger {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu a {
+        border-top: none;
+    }
+}
+	
+	
+</style>
+	
+	
+<style type="text/css">
+#apDiv2 {
+    position: absolute;
+    width: 300px;
+    height: 298px;
+    z-index: 5;
+    left: 428px;
+    top: 203px;
+}
+#apDiv3 {
+    position: absolute;
+    width: 36px;
+    height: 34px;
+    z-index: 5;
+    left: 229px;
+    top: 415px;
+}
+#apDiv4 {
+    position: absolute;
+    width: 43px;
+    height: 158px;
+    z-index: 5;
+    left: 767px;
+    top: 340px;
+}
+#apDiv5 {
+    position: absolute;
+    width: 66px;
+    height: 207px;
+    z-index: 5;
+    left: 1048px;
+    top: 694px;
+}
+#apDiv7 {
+    position: absolute;
+    width: 252px;
+    height: 129px;
+    z-index: 1;
+    left: 144px;
+    top: 261px;
+}
+body {
+    background-color: #FFFEFE;
+}
+#apDiv {
+    position: absolute;
+    width: 49px;
+    height: 47px;
+    z-index: 6;
+    left: -529px;
+    top: 64px;
+}
+body,td,th {
+    color: #000000;
+}
+</style>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+</script>
+</head>
+
+<body onload="MM_preloadImages('A.Index6/long_swap_paysages_urbains.jpg')">
+	
+<nav>
+
+    <!-- Bouton burger -->
+  <div class="burger" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <!-- Menu -->
+  <ul class="menu" id="menu">
+        <li><a href="index.html">ACCUEIL</a></li>
+        <li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
+        <li><a href="Landscapes.html">PAYSAGES</a></li>
+        <li><a href="Divers.html">DIVERS</a></li>
+        <li><a href="biocontact.html">BIO / CONTACT</a></li>
+    </ul>
+
+</nav>
+	
+	
+<div id="apDiv7"><img src="A.Index6/psaquarelles.png" width="251" height="130" alt=""/></div>
+<div id="apDiv2"><img src="A.Index6/imageaccueil.jpg" width="301" height="296" alt=""/></div>
+<div id="apDiv5"></div>
+<div id="apDiv3"><img src="A.Index6/carrerougefonce.png" width="54" height="52" alt=""/></div>
+<div id="apDiv4"><img src="A.Index6/signrougefonce.png" alt="" width="45" height="159"/></div>
+	
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+	
+</body>
+</html>

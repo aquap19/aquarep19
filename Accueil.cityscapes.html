@@ -1,0 +1,784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Document sans nom</title>
+	
+	<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+    }
+
+    .menu {
+        list-style: none;
+        margin: 15;
+        padding: 0;
+        background-color: #FFFFFF;
+        display: flex;
+        justify-content: left;
+    }
+
+    .menu li {
+        margin: 0;
+    }
+
+    .menu a {
+        display: block;
+        padding: 15px 25px;
+		font-family: Arial, sans-serif;
+        font-size: 16px;    /* taille fixe */
+        font-weight: normal;
+        font-style: normal;
+		
+        color: black;
+        text-decoration: none;
+    }
+
+    .menu a:hover {
+        color: #279E9C;
+    }
+	
+	
+/* BOUTON BURGER */
+.burger {
+    display: none;
+    font-size: 30px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* VERSION SMARTPHONE */
+@media screen and (max-width: 768px) {
+
+    .burger {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu a {
+        border-top: none;
+    }
+}
+	
+	
+</style>
+	
+	
+<style type="text/css">
+#apDiv1 {
+	position: absolute;
+	width: 102px;
+	height: 60px;
+	z-index: 1;
+	left: 1064px;
+	top: 448px;
+	visibility: visible;
+}
+#apDiv2 {
+    position: absolute;
+    width: 179px;
+    height: 241px;
+    z-index: 1;
+    left: 1001px;
+    top: 5358px;
+}
+#apDiv3 {
+	position: absolute;
+	width: 77px;
+	height: 184px;
+	z-index: 1;
+	left: 260px;
+	top: -22px;
+}
+#apDiv4 {
+	position: absolute;
+	width: 176px;
+	height: 122px;
+	z-index: 2;
+	left: 404px;
+	top: -1px;
+}
+#apDiv5 {
+	position: absolute;
+	width: 166px;
+	height: 115px;
+	z-index: 1;
+	left: -711px;
+	top: 179px;
+}
+#apDiv6 {
+	position: absolute;
+	width: 134px;
+	height: 103px;
+	z-index: 1;
+	left: 303px;
+	top: 13px;
+}
+#apDiv7 {
+	position: absolute;
+	width: 122px;
+	height: 115px;
+	z-index: 1;
+	left: 419px;
+	top: -17px;
+}
+#apDiv8 {
+	position: absolute;
+	width: 101px;
+	height: 115px;
+	z-index: 1;
+	left: -269px;
+	top: 212px;
+}
+#apDiv9 {
+	position: absolute;
+	width: 112px;
+	height: 115px;
+	z-index: 1;
+	left: 109px;
+	top: -157px;
+}
+#apDiv10 {
+    position: absolute;
+    width: 181px;
+    height: 352px;
+    z-index: 2;
+    left: 748px;
+    top: 6071px;
+}
+#apDiv11 {
+    position: absolute;
+    width: 39px;
+    height: 92px;
+    z-index: 3;
+    left: 564px;
+    top: 3034px;
+}
+#apDiv12 {
+    position: absolute;
+    width: 100px;
+    height: 69px;
+    z-index: 4;
+    left: 93px;
+    top: 3033px;
+}
+#apDiv13 {
+    position: absolute;
+    width: 129px;
+    height: 93px;
+    z-index: 5;
+    left: 89px;
+    top: 5807px;
+}
+#apDiv14 {
+    position: absolute;
+    width: 82px;
+    height: 61px;
+    z-index: 6;
+    left: 397px;
+    top: 5806px;
+}
+#apDiv15 {
+    position: absolute;
+    width: 413px;
+    height: 272px;
+    z-index: 7;
+    left: 92px;
+    top: 2363px;
+}
+#apDiv16 {
+    position: absolute;
+    width: 403px;
+    height: 273px;
+    z-index: 8;
+    left: 548px;
+    top: 2364px;
+}
+#apDiv17 {
+    position: absolute;
+    width: 59px;
+    height: 92px;
+    z-index: 9;
+    left: 92px;
+    top: 7091px;
+}
+#apDiv18 {
+    position: absolute;
+    width: 200px;
+    height: 115px;
+    z-index: 10;
+    left: 88px;
+    top: 5139px;
+}
+#apDiv19 {
+    position: absolute;
+    width: 74px;
+    height: 102px;
+    z-index: 11;
+    left: 116px;
+    top: 1111px;
+}
+#apDiv20 {
+    position: absolute;
+    width: 103px;
+    height: 66px;
+    z-index: 12;
+    left: 536px;
+    top: 1623px;
+}
+#apDiv21 {
+    position: absolute;
+    width: 70px;
+    height: 103px;
+    z-index: 13;
+    left: 120px;
+    top: 4306px;
+}
+#apDiv22 {
+    position: absolute;
+    width: 93px;
+    height: 85px;
+    z-index: 14;
+    left: 1451px;
+    top: 4647px;
+}
+#apDiv23 {
+    position: absolute;
+    width: 42px;
+    height: 102px;
+    z-index: 15;
+    left: 90px;
+    top: 4781px;
+}
+#apDiv24 {
+    position: absolute;
+    width: 63px;
+    height: 92px;
+    z-index: 16;
+    left: 812px;
+    top: 640px;
+}
+#apDiv25 {
+    position: absolute;
+    width: 49px;
+    height: 71px;
+    z-index: 17;
+    left: 81px;
+    top: 644px;
+}
+#apDiv26 {
+    position: absolute;
+    width: 103px;
+    height: 67px;
+    z-index: 18;
+    left: 396px;
+    top: 3353px;
+}
+#apDiv27 {
+    position: absolute;
+    width: 100px;
+    height: 71px;
+    z-index: 19;
+    left: 540px;
+    top: 4781px;
+}
+#apDiv28 {
+    position: absolute;
+    width: 112px;
+    height: 110px;
+    z-index: 20;
+    left: 418px;
+    top: 6072px;
+}
+#apDiv29 {
+    position: absolute;
+    width: 70px;
+    height: 92px;
+    z-index: 21;
+    left: 92px;
+    top: 6071px;
+}
+#apDiv30 {
+    position: absolute;
+    width: 98px;
+    height: 71px;
+    z-index: 22;
+    left: 740px;
+    top: 3638px;
+}
+#apDiv31 {
+    position: absolute;
+    width: 102px;
+    height: 395px;
+    z-index: 23;
+    left: 92px;
+    top: 3353px;
+}
+#apDiv32 {
+    position: absolute;
+    width: 116px;
+    height: 68px;
+    z-index: 24;
+    left: 387px;
+    top: 3884px;
+}
+#apDiv33 {
+    position: absolute;
+    width: 101px;
+    height: 49px;
+    z-index: 25;
+    left: 686px;
+    top: 3354px;
+}
+#apDiv34 {
+    position: absolute;
+    width: 120px;
+    height: 88px;
+    z-index: 26;
+    left: 93px;
+    top: 2026px;
+}
+#apDiv35 {
+    position: absolute;
+    width: 91px;
+    height: 91px;
+    z-index: 27;
+    left: 93px;
+    top: 1625px;
+}
+#apDiv36 {
+    position: absolute;
+    width: 323px;
+    height: 212px;
+    z-index: 28;
+    left: 584px;
+    top: 2025px;
+}
+#apDiv37 {
+    position: absolute;
+    width: 102px;
+    height: 68px;
+    z-index: 29;
+    left: 436px;
+    top: 6968px;
+}
+#apDiv38 {
+    position: absolute;
+    width: 73px;
+    height: 48px;
+    z-index: 30;
+    left: 90px;
+    top: 5476px;
+}
+#apDiv39 {
+    position: absolute;
+    width: 411px;
+    height: 274px;
+    z-index: 31;
+    left: 180px;
+    top: 7362px;
+}
+#apDiv40 {
+    position: absolute;
+    width: 102px;
+    height: 65px;
+    z-index: 32;
+    left: 164px;
+    top: 213px;
+}
+#apDiv41 {
+    position: absolute;
+    width: 65px;
+    height: 101px;
+    z-index: 33;
+    left: 547px;
+    top: 641px;
+}
+#apDiv42 {
+    position: absolute;
+    width: 67px;
+    height: 103px;
+    z-index: 34;
+    left: 434px;
+    top: 6564px;
+}
+#apDiv43 {
+    position: absolute;
+    width: 69px;
+    height: 103px;
+    z-index: 35;
+    left: 549px;
+    top: 2670px;
+}
+#apDiv44 {
+    position: absolute;
+    width: 72px;
+    height: 79px;
+    z-index: 36;
+    left: 51px;
+    top: 7842px;
+}
+#apDiv45 {
+    position: absolute;
+    width: 102px;
+    height: 68px;
+    z-index: 37;
+    left: 52px;
+    top: 8374px;
+}
+#apDiv46 {
+	position: absolute;
+	width: 66px;
+	height: 99px;
+	z-index: 38;
+	left: 276px;
+	top: 663px;
+}
+#apDiv47 {
+	position: absolute;
+	width: 89px;
+	height: 77px;
+	z-index: 39;
+	left: 958px;
+	top: 410px;
+}
+#apDiv48 {
+	position: absolute;
+	width: 104px;
+	height: 71px;
+	z-index: 40;
+	left: 418px;
+	top: 302px;
+}
+#apDiv49 {
+	position: absolute;
+	width: 106px;
+	height: 65px;
+	z-index: 41;
+	left: 804px;
+	top: 541px;
+}
+#apDiv50 {
+	position: absolute;
+	width: 121px;
+	height: 91px;
+	z-index: 42;
+	left: 72px;
+	top: 398px;
+}
+#apDiv51 {
+	position: absolute;
+	width: 84px;
+	height: 118px;
+	z-index: 43;
+	left: 576px;
+	top: 515px;
+}
+#apDiv52 {
+	position: absolute;
+	width: 66px;
+	height: 103px;
+	z-index: 44;
+	left: 463px;
+	top: 659px;
+}
+#apDiv53 {
+    position: absolute;
+    width: 77px;
+    height: 232px;
+    z-index: 45;
+    left: 836px;
+    top: 8716px;
+}
+#apDiv54 {
+    position: absolute;
+    width: 39px;
+    height: 143px;
+    z-index: 46;
+    left: 852px;
+    top: 8527px;
+}
+#apDiv55 {
+	position: absolute;
+	width: 67px;
+	height: 102px;
+	z-index: 47;
+	left: 91px;
+	top: 662px;
+}
+#apDiv56 {
+    position: absolute;
+    width: 103px;
+    height: 57px;
+    z-index: 48;
+    left: 93px;
+    top: 2672px;
+}
+#apDiv57 {
+	position: absolute;
+	width: 102px;
+	height: 68px;
+	z-index: 49;
+	left: 711px;
+	top: 414px;
+}
+#apDiv58 {
+	position: absolute;
+	width: 64px;
+	height: 99px;
+	z-index: 50;
+	left: 921px;
+	top: 662px;
+}
+#apDiv59 {
+	position: absolute;
+	width: 103px;
+	height: 68px;
+	z-index: 51;
+	left: 218px;
+	top: 410px;
+}
+#apDiv60 {
+	position: absolute;
+	width: 86px;
+	height: 91px;
+	z-index: 52;
+	left: 691px;
+	top: 533px;
+}
+#apDiv61 {
+    position: absolute;
+    width: 113px;
+    height: 115px;
+    z-index: 53;
+    left: 567px;
+    top: 5474px;
+}
+#apDiv62 {
+	position: absolute;
+	width: 82px;
+	height: 50px;
+	z-index: 54;
+	left: 795px;
+	top: 834px;
+}
+#apDiv63 {
+    position: absolute;
+    width: 123px;
+    height: 90px;
+    z-index: 55;
+    left: 89px;
+    top: 3796px;
+}
+#apDiv64 {
+	position: absolute;
+	width: 103px;
+	height: 69px;
+	z-index: 56;
+	left: 834px;
+	top: 413px;
+}
+#apDiv65 {
+	position: absolute;
+	width: 101px;
+	height: 70px;
+	z-index: 57;
+	left: 549px;
+	top: 302px;
+}
+#apDiv66 {
+    position: absolute;
+    width: 100px;
+    height: 67px;
+    z-index: 58;
+    left: 571px;
+    top: 3843px;
+}
+#apDiv67 {
+	position: absolute;
+	width: 68px;
+	height: 102px;
+	z-index: 59;
+	left: 224px;
+	top: 810px;
+}
+#apDiv68 {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 60;
+	left: 644px;
+	top: 159px;
+}
+#apDiv69 {
+    position: absolute;
+    width: 69px;
+    height: 100px;
+    z-index: 61;
+    left: 687px;
+    top: 5807px;
+}
+#apDiv70 {
+    position: absolute;
+    width: 280px;
+    height: 48px;
+    z-index: 3;
+    left: 550px;
+    top: 211px;
+}
+#apDiv71 {
+    position: absolute;
+    width: 152px;
+    height: 51px;
+    z-index: 3;
+    left: 92px;
+    top: 6563px;
+}
+#apDiv72 {
+    position: absolute;
+    width: 94px;
+    height: 84px;
+    z-index: 3;
+    left: 72px;
+    top: 44px;
+}
+#apDiv73 {
+	position: absolute;
+	width: 200px;
+	height: 115px;
+	z-index: 65;
+	left: 892px;
+	top: 900px;
+}
+#apDiv74 {
+    position: absolute;
+    width: 39px;
+    height: 36px;
+    z-index: 65;
+    left: 438px;
+    top: 5138px;
+}
+body,td,th {
+    font-family: "MS Serif", "New York", serif;
+    font-size: x-large;
+    color: #000000;
+}
+#apDiv75 {
+    position: absolute;
+    width: 278px;
+    height: 201px;
+    z-index: 1;
+    left: 578px;
+    top: 7942px;
+}
+#apDiv76 {
+    position: absolute;
+    width: 210px;
+    height: 309px;
+    z-index: 1;
+    left: 724px;
+    top: 6563px;
+}
+body {
+    background-color: #FFFFFF;
+}
+</style>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+</script>
+	
+</head>
+
+<body>
+	
+<nav>
+
+    <!-- Bouton burger -->
+  <div class="burger" onclick="toggleMenu()">
+        ☰
+  </div>
+
+    <!-- Menu -->
+  <ul class="menu" id="menu">
+        <li><a href="index.html">ACCUEIL</a></li>
+        <li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
+        <li><a href="Landscapes.html">PAYSAGES</a></li>
+        <li><a href="Divers.html">DIVERS</a></li>
+        <li><a href="biocontact.html">BIO / CONTACT</a></li>
+  </ul>
+
+</nav>
+	
+	
+<div id="apDiv70"><img src="Paysages_Urbains_Cityscapes/20251125_135511.jpg" width="401" height="361" /></div>
+<div id="apDiv71"><img src="Paysages_Urbains_Cityscapes/Barcelona,-La-Ribera.jpg" width="221" height="479" /></div>
+<div id="apDiv75"><img src="Paysages_Urbains_Cityscapes/BigBen.JPG" width="376" height="274" /></div>
+<div id="apDiv76"><img src="Paysages_Urbains_Cityscapes/bratislava.JPG" width="228" height="345" /></div>
+<div id="apDiv10"><img src="Paysages_Urbains_Cityscapes/Bruxelles4.jpg" width="204" height="395" alt=""/></div>
+<div id="apDiv11"><img src="Paysages_Urbains_Cityscapes/Bruxelles5.JPG" width="387" height="215" alt=""/></div>
+<div id="apDiv66"><img src="Paysages_Urbains_Cityscapes/zParis.jpg" width="381" height="315" alt=""/></div>
+<div id="apDiv63"><img src="Paysages_Urbains_Cityscapes/zParis.LeMarais.jpg" width="279" height="424" alt=""/></div>
+<div id="apDiv12"><img src="Paysages_Urbains_Cityscapes/Bruxelles6.JPG" width="376" height="217" alt=""/></div>
+<div id="apDiv13"><img src="Paysages_Urbains_Cityscapes/city99.JPG" width="280" height="174" alt=""/></div>
+<div id="apDiv14"><img src="Paysages_Urbains_Cityscapes/contraste-noir.jpg" width="262" height="174" alt=""/></div>
+<div id="apDiv15"><img src="Paysages_Urbains_Cityscapes/crépuscule-rouge.JPG" width="418" height="274" alt=""/></div>
+<div id="apDiv16"><img src="Paysages_Urbains_Cityscapes/crépuscule-tordu.JPG" width="401" height="271" alt=""/></div>
+<div id="apDiv17"><img src="Paysages_Urbains_Cityscapes/Harbour.6.jpg" width="287" height="187" alt=""/></div>
+<div id="apDiv18"><img src="Paysages_Urbains_Cityscapes/hep.taxi.jpg" width="307" height="298" alt=""/></div>
+<div id="apDiv19"><img src="Paysages_Urbains_Cityscapes/London.JPG" width="816" height="425" alt=""/></div>
+<div id="apDiv20"><img src="Paysages_Urbains_Cityscapes/Loneliness_N.Y..JPG" width="415" height="302" alt=""/></div>
+<div id="apDiv21"><img src="Paysages_Urbains_Cityscapes/Melbourne3.jpg" width="790" height="379" alt=""/></div>
+<div id="apDiv23"><img src="Paysages_Urbains_Cityscapes/Mexico.JPG" width="409" height="266" alt=""/></div>
+<div id="apDiv24"><img src="Paysages_Urbains_Cityscapes/N.Y.7.JPG" width="140" height="349" alt=""/></div>
+<div id="apDiv25"><img src="Paysages_Urbains_Cityscapes/N.Y.37.jpg" width="424" height="402" alt=""/></div>
+<div id="apDiv26"><img src="Paysages_Urbains_Cityscapes/P1110379.jpg" width="264" height="396" alt=""/></div>
+<div id="apDiv27"><img src="Paysages_Urbains_Cityscapes/P1110381.jpg" width="409" height="267" alt=""/></div>
+<div id="apDiv28"><img src="Paysages_Urbains_Cityscapes/P1110382.jpg" width="261" height="393" alt=""/></div>
+<div id="apDiv29"><img src="Paysages_Urbains_Cityscapes/P1110383.jpg" width="259" height="389" alt=""/></div>
+<div id="apDiv31"><img src="Paysages_Urbains_Cityscapes/Paris.2.JPG" width="279" height="396" alt=""/></div>
+<div id="apDiv32"><img src="Paysages_Urbains_Cityscapes/Paris.Le-Marais.1.jpg" width="162" height="211" alt=""/></div>
+<div id="apDiv33"><img src="Paysages_Urbains_Cityscapes/Paris_Le.Marais.JPG" width="265" height="395" alt=""/></div>
+<div id="apDiv34"><img src="Paysages_Urbains_Cityscapes/Road5.JPG" width="430" height="237" alt=""/></div>
+<div id="apDiv35"><img src="Paysages_Urbains_Cityscapes/Road6.JPG" width="403" height="300" alt=""/></div>
+<div id="apDiv36"><img src="Paysages_Urbains_Cityscapes/Road10.JPG" width="366" height="238" alt=""/></div>
+<div id="apDiv37"><img src="Paysages_Urbains_Cityscapes/Santa-Maria-3.jpg" width="420" height="308" alt=""/></div>
+<div id="apDiv38"><img src="Paysages_Urbains_Cityscapes/shadow.17.jpg" width="409" height="255" alt=""/></div>
+<div id="apDiv39"><img src="Paysages_Urbains_Cityscapes/Terrasse.3.JPG" width="591" height="388" alt=""/></div>
+<div id="apDiv40"><img src="Paysages_Urbains_Cityscapes/ville.13.jpg" width="362" height="362" alt=""/></div>
+<div id="apDiv41"><img src="Paysages_Urbains_Cityscapes/ville.31.jpg" width="230" height="345" alt=""/></div>
+<div id="apDiv42"><img src="Paysages_Urbains_Cityscapes/ville67.jpg" width="231" height="345" alt=""/></div>
+<div id="apDiv43"><img src="Paysages_Urbains_Cityscapes/zcrépusculrayebleu.JPG" width="403" height="264" alt=""/></div>
+<div id="apDiv74"><img src="Paysages_Urbains_Cityscapes/zBitschwiller.jpg" width="512" height="301" alt=""/></div>
+<div id="apDiv61"><img src="Paysages_Urbains_Cityscapes/zville.23.jpg" width="384" height="257" alt=""/></div>
+<div id="apDiv56"><img src="Paysages_Urbains_Cityscapes/z1110380.jpg" width="419" height="263" alt=""/></div>
+<div id="apDiv69"><img src="Paysages_Urbains_Cityscapes/zThann.Hotel.de.Ville.jpg" width="264" height="172" alt=""/></div>
+<div id="apDiv53"><img src="Signatures_Logos6/logoP19carré_rouge.png" width="75" height="73" alt=""/></div>
+<div id="apDiv54"><img src="Signatures_Logos6/signrougefonce.png" width="39" height="145" alt=""/></div>
+<div id="apDiv44"><img src="Paysages_Urbains_Cityscapes/old.town.JPG" width="470" height="478" alt=""/></div>
+<div id="apDiv45"><img src="Paysages_Urbains_Cityscapes/stairs.2.JPG" width="636" height="415" alt=""/></div>
+	
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+</script>
+	
+	
+</body>
+</html>
