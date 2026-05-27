@@ -16,7 +16,7 @@
 
     .menu {
         list-style: none;
-        margin: 15;
+        margin: 15px;
         padding: 0;
         background-color: #FFFFFF;
         display: flex;
@@ -75,12 +75,17 @@
 
 	 body {
         overflow-x: hidden;
+		display: flex;
+        flex-direction: column;
+        align-items: center; 
     }
 
     img {
         max-width: 100%;
         height: auto;
         display: block;
+	    margin-left: auto;
+        margin-right: auto;
     }
 
    [id^="apDiv"] {
@@ -91,6 +96,18 @@
         height: auto !important;
         margin: 20px auto;
         text-align: center;
+	    display: flex;
+        justify-content: center;
+    }
+	
+	/* SIGNATURE */
+    img[src*="signrougefonce.png"] {
+        order: 998;
+    }
+
+    /* LOGO */
+    img[src*="logoP19carré_rouge.png"] {
+        order: 999;
     }
 }	
 	

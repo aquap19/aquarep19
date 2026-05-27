@@ -55,7 +55,14 @@
 /* VERSION SMARTPHONE */
 @media screen and (max-width: 768px) {
 
-    .burger {
+   body {
+        overflow-x: hidden;
+	    display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+	
+	.burger {
         display: block;
     }
 
@@ -72,14 +79,14 @@
     .menu a {
         border-top: none;
     }
-    body {
-        overflow-x: hidden;
-    }
+    
 
     img {
         max-width: 100%;
         height: auto;
         display: block;
+		margin-left: auto;
+        margin-right: auto;
     }
 
      [id^="apDiv"] {
@@ -90,6 +97,18 @@
         height: auto !important;
         margin: 20px auto;
         text-align: center;
+		display: flex;
+        justify-content: center;
+    }
+	
+	/* SIGNATURE */
+    img[src*="signrougefonce.png"] {
+        order: 998;
+    }
+
+    /* LOGO */
+    img[src*="logoP19carré_rouge.png"] {
+        order: 999;
     }
 }
 	
