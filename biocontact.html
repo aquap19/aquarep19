@@ -57,9 +57,6 @@
 
 	 body {
         overflow-x: hidden;
-		display: flex;
-        flex-direction: column;
-        align-items: center; 
     }
 	
     .burger {
@@ -89,7 +86,7 @@
         margin-right: auto;
     }
 
-    [id^="apDiv"] 
+   
 	#lego,
     #sign,
     #carre  {
@@ -100,17 +97,15 @@
         height: auto !important;
         margin: 20px auto;
         text-align: center;
-		display: flex;
-        justify-content: center;
     }
 	
 	/* SIGNATURE */
-    img[src*="signrougefonce.png"] {
+     #sign {
         order: 998;
     }
 
     /* LOGO */
-    img[src*="logoP19carré_rouge.png"] {
+    #carre {
         order: 999;
     }
 }
