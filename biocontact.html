@@ -77,6 +77,23 @@ header {
     text-transform: uppercase;
     font-size: 12  px;
 }
+	
+	.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-text{
+    text-align:center;
+}
+
+.portrait{
+    width:2cm;
+    height:4cm;
+    object-fit:contain;
+    margin-left:2cm;
+}
 
 /* =========CV : margin réduit l'espace avant Présentation ================= */
 
@@ -228,9 +245,14 @@ header {
 <!-- HERO -->
 <section class="hero">
 
-    <h1>PATRICE STUTZ</h1>
+    <div class="hero-content">
 
-    <p>Aquarelle · Peinture numérique</p>
+        <div class="hero-text">
+            <h1>PATRICE STUTZ</h1>
+            <p>Aquarelle · Peinture numérique</p>
+        </div>
+
+        <img src="Signatures_Logos6/signrougefonce.png" alt="signature" class="portrait">
 
 </section>
 
