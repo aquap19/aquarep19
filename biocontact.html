@@ -1,7 +1,3 @@
-
-# Page HTML modernisée avec formulaire de contact responsive
-
-```html
 <!doctype html>
 <html lang="fr">
 
@@ -15,7 +11,7 @@
 
 :root {
     --accent: #279E9C;
-    --red: #C00000;
+    --red: #8B0000;
 }
 
 * {
@@ -24,400 +20,303 @@
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    font-family: Georgia, serif;
     background: #fff;
-    color: #000;
+    color: #111;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ================= NAV ================= */
 
 header {
     width: 100%;
 }
 
-nav {
-    width: 100%;
-}
-
 .menu {
     list-style: none;
-    margin: 15px;
-    padding: 0;
-
     display: flex;
-    gap: 5px;
-
-    background: white;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    margin: 0;
 }
 
 .menu a {
-    display: block;
-    padding: 15px 25px;
-
     text-decoration: none;
-    color: black;
-
-    font-size: 16px;
-    transition: color 0.3s ease;
+    color: #000;
+    font-size: 14px;
+    letter-spacing: 2px;
+	font-family: arial;
 }
 
 .menu a:hover {
     color: var(--accent);
 }
 
-/* Burger */
+/* ====== HERO  bloc à partir de Présentation / height modifie la hauteur de tout le bloc   ====== */
 
-.burger {
-    display: none;
-    font-size: 30px;
-    padding: 15px;
-    cursor: pointer;
-    user-select: none;
-    background: none;
-    border: none;
-}
-
-/* =========================
-   CONTENU
-========================= */
-
-main {
-    width: 100%;
-    padding: 20px;
-}
-
-.content {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 40px;
-    align-items: start;
-
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.bio {
-    padding-top: 20px;
-    max-width: 500px;
-}
-
-.bio h1 {
-    margin-top: 0;
-
-    font-size: 32px;
-    color: var(--red);
-}
-
-.bio p {
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-/* =========================
-   TEXTE PERSONNALISABLE
-========================= */
-
-.custom-text-block {
-    margin-bottom: 30px;
-}
-
-.custom-text-block h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    color: var(--red);
-}
-
-.custom-text {
-    width: 100%;
-    min-height: 220px;
-
-    padding: 16px;
-
-    border: 1px solid #ccc;
-    border-radius: 6px;
-
-    font-size: 16px;
-    line-height: 1.5;
-    font-family: Arial, sans-serif;
-
-    resize: vertical;
-}
-
-.custom-text:focus {
-    outline: none;
-    border-color: var(--accent);
-}
-
-/* =========================
-   FORMULAIRE
-========================= */
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-/* =========================
-   FORMULAIRE
-========================= */
-
-.contact-form {
-    margin-top: 30px;
-
+.hero {
+    height: 35vh;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px;
+.hero h1 {
+    font-size: 39px;
+    color: var(--red);
+    letter-spacing: 5px;
+    margin: 0;
+}
 
-    border: 1px solid #ccc;
-    border-radius: 6px;
+.hero p {
+    margin-top: 15px;
+    color: #666;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12  px;
+}
 
+/* =========CV : margin réduit l'espace avant Présentation ================= */
+
+.cv {
+    max-width: 900px;
+    margin: 20px auto 80px auto;
+    padding: 0 20px;
+}
+
+.cv h2 {
+    font-size: 18px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.cv p {
+    line-height: 1.8;
     font-size: 16px;
+}
+
+.timeline {
+    border-left: 0px solid #ddd;
+    padding-left: 15px;
+}
+
+.timeline div {
+    margin-bottom: 8px;
+}
+
+	.cv h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.cv h2:first-child {
+    margin-top: 0;
+}
+	
+/* ================= CONTACT ================= */
+
+.contact {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.contact h2 {
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+	font-size: 22px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
     font-family: Arial, sans-serif;
-
-    transition: border-color 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-}
-
-.contact-form textarea {
-    min-height: 180px;
-    resize: vertical;
-}
-
-.contact-form button {
-    width: fit-content;
-    padding: 14px 24px;
-
-    border: none;
-    border-radius: 6px;
-
+.contact button {
     background: var(--accent);
     color: white;
-
-    font-size: 16px;
+    padding: 12px 18px;
+    border: none;
     cursor: pointer;
-
-    transition: opacity 0.3s ease;
 }
 
-.contact-form button:hover {
+.contact button:hover {
     opacity: 0.85;
 }
 
-/* =========================
-   IMAGES
-========================= */
+/* ================= FOOTER LINKS ================= */
 
-.visuals {
-    display: flex;
-    align-items: stretch;
-    gap: 20px;
+	
+	.links h2 {
+    font-size: 18px;
 }
 
-.visuals img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+	
+.links {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 0 20px;
 }
 
-.signature-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-
-    /* Descend les logos vers le bouton envoyer */
-    padding-top: 340px;
-
-    gap: 12px;
+.links a {
+    color: #8B0000;
+    text-decoration: none;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+	/*chgt couleur au survol sites 2011 2020*/
+	
+	.links a {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
 
-@media screen and (max-width: 768px) {
+  .links a:hover {
+    color: #279E9C;
+    letter-spacing: 1px;
+}
+	
+	
+	/*pour défilement fluide en revenant aux articles*/
+	
+	html {
+    scroll-behavior: smooth;
+}
+	
+/* ================= RESPONSIVE ================= */
 
-    .burger {
-        display: block;
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 38px;
     }
 
     .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin: 0;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-
-    .content {
-        grid-template-columns: 1fr;
-    }
-
-    .visuals {
         flex-direction: column;
         align-items: center;
-    }
-
-    .signature-column {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .bio {
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .contact-form button {
-        width: 100%;
     }
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-
     <nav>
-
-        <!-- Bouton burger -->
-        <button class="burger"
-                aria-label="Ouvrir le menu"
-                onclick="toggleMenu()">
-            ☰
-        </button>
-
-        <!-- Menu -->
-        <ul class="menu" id="menu">
+        <ul class="menu">
             <li><a href="index.html">ACCUEIL</a></li>
             <li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
             <li><a href="Landscapes.html">PAYSAGES</a></li>
             <li><a href="Divers.html">DIVERS</a></li>
             <li><a href="biocontact.html">BIO / CONTACT</a></li>
         </ul>
-
     </nav>
-
 </header>
 
-<main>
+<!-- HERO -->
+<section class="hero">
 
-    <section class="content">
+    <h1>PATRICE STUTZ</h1>
 
-        <!-- Texte -->
-        <article class="bio">
+    <p>Aquarelle · Peinture numérique</p>
 
-            <!-- Zone de t  exte personnalisable -->
-            <section class="custom-text-block">
-                <h2>Présentation</h2>
+</section>
 
-                <textarea class="custom-text"
-                          placeholder="Saisissez votre texte ici..."></textarea>
-            </section>
+<!-- CV -->
+<section class="cv">
 
-            <p>
-                ENVOI  MESSAGE
-            </p>
+    <h2>Présentation</h2>
+    <p>
+       Actuellement, peinture à l’aquarelle et numérique sur iPad, essentiellement des paysages urbains "modifiés", réalisés d'après de multiples photos assemblées sur Photoshop.<br> Débuts à la peinture à l’huile et aux pastels gras <br>
+       En 2011, stage en Dordogne avec Alvaro Castagnet, artiste uruguayen de renommée internationale.
+    </p>
 
-            <!-- Formulaire -->
-            <form class="contact-form"
-                  action="https://formspree.io/f/TON_ID_FORMULAIRE"
-                  method="POST">
+    <h2>Expositions</h2>
+    <div class="timeline">
+        <div>2011 — Ettuefont</div>
+        <div>2011 — Musée de Thann</div>
+        <div>2013 — Mairie de Steinbach</div>
+        <div>2014 — Expo collective Talents et Hobbies à Steinbach</div>
+        <div>2018 — Mairie de Thann</div>
+        <div>2019 — Mairie de Steinbach</div>
+    </div>
 
-                <input
-                    type="text"
-                    name="nom"
-                    placeholder="Votre nom"
-                    required>
+    <h2>Prix</h2>
+    <p>
+        2012 — Chevalet d’Or de Cernay<br>
+        2012 — Prix Office Municipal des Sports et de la Culture<br>
+        2020 — Prix des Vitrines de Cernay
+    </p>
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Votre e-mail"
-                    required>
+    <h2 id="articles-presse">Articles de presse</h2>
+    <p>
+		
+		<div class="article-presse">
+        <i><strong>Article paru dans le journal L'Alsace</strong></i><br><br>								  
 
-                <textarea
-                    name="message"
-                    placeholder="Votre message"
-                    required></textarea>
-				
-				<input type="hidden"
-                    name="_next"
-                    value="https://https://aquap19.github.io/aquarep19//merci.html">
+Plus d’une vingtaine d’aquarelles seront exposées ces prochains jours dans la salle d’exposition du rez-de-chaussée de la mairie de Thann. Patrice Stutz, qui n’en est pas à sa première exposition, présente...
+    </p>
+	<a href="pressealsace.html">Lire l'article →</a><br><br>
+        </div>	
+	
+   <p> 
+	
+	<div class="article-presse">
+	<i><strong>Article paru dans le journal les DNA</strong></i><br>
+	
+	<br><i>Les visions urbaines de Patrice Stutz &nbsp;&nbsp;&nbsp;&nbsp; THANN – Exposition d'art</i><br><br>
 
-                <button type="submit">
-                    Envoyer
-                </button>
+Patrice Stutz, aquarelliste steinbachois, livre ses <em>Visions urbaines</em>
+dans une très belle exposition accrochée...
+   </p>
+   <a href="pressedna.html">Lire l'article →</a><br><br>
+		 </div>	
 
-            </form>
 
-        </article>
 
-        <!-- Images -->
-        <aside class="visuals">
 
-            <figure class="lego">
-                <img
-                    src="Bio6/construction.jpg"
-                    width="361"
-                    height="255"
-                    alt="page en construction">
-            </figure>
+</section>
 
-            <section class="signature-column">
+<!-- CONTACT -->
+<section class="contact">
 
-                <figure class="signature">
-                    <img
-                        src="Signatures_Logos6/signrougefonce.png"
-                        width="41"
-                        height="173"
-                        alt="Signature">
-                </figure>
+    <h2>Contact</h2>
 
-                <figure class="logo">
-                    <img
-                        src="Signatures_Logos6/logoP19carré_rouge.png"
-                        width="52"
-                        height="50"
-                        alt="Logo">
-                </figure>
+    <form action="https://formspree.io/f/xaqkkyky" method="POST">
 
-            </section>
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
 
-        </aside>
+        <button type="submit">Envoyer</button>
 
-    </section>
+    </form>
 
-</main>
+</section>
 
-<script>
+<!-- LINKS -->
+<section class="links">
 
-function toggleMenu() {
-    document
-        .getElementById("menu")
-        .classList
-        .toggle("active");
-}
+    <h2>SITES ANCIENS</h2>
 
-</script>
+    <p>
+        <a href="http://stutz.watercolour.free.fr/" target="_blank">Site 2020</a><br><br>
+        <a href="http://stutzbp.free.fr/" target="_blank">Site 2011</a>
+    </p>
+
+</section>
 
 </body>
 </html>
-
