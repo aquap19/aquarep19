@@ -31,7 +31,8 @@
         display: block;
         padding: 15px 25px;
 		font-family: Arial, sans-serif;
-        font-size: 16px;    /* taille fixe */
+        font-size: 14px;    /* taille fixe */
+		letter-spacing:2px;
         font-weight: normal;
         font-style: normal;
 		
@@ -42,6 +43,36 @@
     .menu a:hover {
         color: #279E9C;
     }
+	
+			
+			/*titre en-tête*/
+	.gallery-header{
+    position:absolute;
+    top:120px;
+    left:519px;
+    transform:translateX(-50%);
+    z-index:100;
+}
+
+
+.gallery-header h1{
+    margin:0;
+    color:#8B0000;
+    font-size:22px;
+    font-family:Georgia, serif;
+    letter-spacing:5px;
+    font-weight:normal;
+    text-transform:uppercase;
+}
+	
+	   #signature-finale{
+    position:absolute;
+    top:3800px;
+    left:519px;
+    transform:translateX(-50%);
+    width:auto;
+    text-align:center;
+}
 	
 	
 /* BOUTON BURGER */
@@ -54,6 +85,32 @@
 
 /* VERSION SMARTPHONE */
 @media screen and (max-width: 768px) {
+	
+	#signature-finale{
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        width: 100%;
+        text-align: center;
+        margin: 30px 0;
+        display: block;
+        order: 1000;
+    }
+	
+	.gallery-header{
+        position:static;
+        transform:none;
+        left:auto;
+        width:100%;
+        text-align:center;
+        margin:20px 0;
+    }
+
+    .gallery-header h1{
+        font-size:18px;
+        letter-spacing:3px;
+    }
 
   body {
         overflow-x: hidden;
@@ -115,6 +172,26 @@
 #apDiv7 { order: 997; }   /* Red Lights */
 #apDiv2 { order: 998; }   /* Signature */
 #apDiv12 { order: 999; }  /* Logo */
+}
+	
+	
+	#signature-finale{
+    position:absolute;
+    top:3800px;
+    width:100%;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+img{
+    transition:transform .3s ease;
+}
+
+img:hover{
+    transform:scale(1.02);
 }
 	
 </style>
@@ -323,7 +400,9 @@ function MM_preloadImages() { //v3.0
 
 </nav>
 	
-	
+	<header class="gallery-header">
+    <h1>Divers</h1>
+</header>
 <div id="apDiv17"><img src="Divers6/hyperrealisme-essai-2.JPG" width="412" height="566" /></div>	
 <div id="apDiv14"><img src="Divers6/hyperrealisme-essai-1.JPG" width="354" height="266" /></div>	
 <div id="apDiv10"><img src="Divers6/hyperrealisme-essai-3.JPG" width="352" height="236" /></div>	
@@ -343,7 +422,11 @@ function MM_preloadImages() { //v3.0
 <div id="apDiv1"><img src="Divers6/num.Aiguilles.jpg" width="342" height="300" /></div>
 <div id="apDiv2"><img src="Signatures_Logos6/signrougefonce.png" alt="" width="43" height="114"/></div>
 <div id="apDiv12"><img src="Signatures_Logos6/logoP19carré_rouge.png" width="41" height="40" alt=""/></div>
-	
+<div id="signature-finale">
+    Patrice Stutz<br>
+    Aquarelle · Peinture numérique
+    <div style="height:100px;"></div>
+</div>
 	
 
 	<script>

@@ -31,7 +31,8 @@
         display: block;
         padding: 15px 25px;
 		font-family: Arial, sans-serif;
-        font-size: 16px;    /* taille fixe */
+        font-size: 14px;    /* taille fixe */
+		letter-spacing:2px;
         font-weight: normal;
         font-style: normal;
 		
@@ -42,6 +43,49 @@
     .menu a:hover {
         color: #279E9C;
     }
+		
+		
+			/*titre en-tête*/
+	.gallery-header{
+    position:absolute;
+    top:150px;
+    left:519px;
+    transform:translateX(-50%);
+    z-index:100;
+}
+
+
+.gallery-header h1{
+    margin:0;
+    color:#8B0000;
+    font-size:22px;
+    font-family:Georgia, serif;
+    letter-spacing:5px;
+    font-weight:normal;
+    text-transform:uppercase;
+}
+		
+.gallery-content{
+    position:relative;
+    top:50px;
+}
+		
+		#signature-finale{
+    position:absolute;
+     top:2200px;
+    left:519px;
+    transform:translateX(-50%);
+    width:auto;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+		
+		img{
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
 	
 	
 /* BOUTON BURGER */
@@ -54,6 +98,30 @@
 
 /* VERSION SMARTPHONE */
 @media screen and (max-width: 768px) {
+	
+	#signature-finale{
+        position: static;
+        left: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+	
+	.gallery-header{
+        position:static;
+        transform:none;
+        left:auto;
+        width:100%;
+        text-align:center;
+        margin:20px 0;
+    }
+
+    .gallery-header h1{
+        font-size:18px;
+        letter-spacing:3px;
+    }
+
 
     .burger {
         display: block;
@@ -115,7 +183,9 @@
         order: 999;
     }
 }	
-	
+		
+		
+
 </style>
 	
 	
@@ -228,7 +298,11 @@ function MM_preloadImages() { //v3.0
 
 </nav>
 	
-
+<header class="gallery-header">
+    <h1>Paysages</h1>
+</header>
+	
+	<div class="gallery-content">
 <div id="apDiv2"><img src="Paysages_Landscapes6/P1110385.jpg" width="570" height="370" /></div>
 <div id="apDiv3"><img src="Paysages_Landscapes6/P1110384.jpg" width="570" height="366" /></div>
 <div id="apDiv4"><img src="Paysages_Landscapes6/forest.jpg" width="570" height="347" /></div>
@@ -236,6 +310,13 @@ function MM_preloadImages() { //v3.0
 <div id="apDiv5"><img src="Paysages_Landscapes6/campagne_allemande.JPG" width="374" height="292" /></div>
 <div id="apDiv7"><img src="Signatures_Logos6/logoP19carré_rouge.png" width="39" height="37" alt=""/></div>
 <div id="apDiv8"><img src="Signatures_Logos6/signrougefonce.png" alt="" width="44" height="145"/></div> 
+		</div>
+	
+<div id="signature-finale">
+    Patrice Stutz<br>
+    Aquarelle · Peinture numérique
+    <div style="height:100px;"></div>
+</div>
 	
 <script>
 function toggleMenu() {

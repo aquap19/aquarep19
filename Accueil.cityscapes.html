@@ -31,7 +31,8 @@
         display: block;
         padding: 15px 25px;
 		font-family: Arial, sans-serif;
-        font-size: 16px;    /* taille fixe */
+        font-size: 14px;    /* taille fixe */
+		letter-spacing:2px;
         font-weight: normal;
         font-style: normal;
 		
@@ -43,6 +44,46 @@
         color: #279E9C;
     }
 	
+			/*titre en-tête*/
+	.gallery-header{
+    position:absolute;
+    top:170px;
+    left:519px;
+    transform:translateX(-50%);
+    z-index:100;
+}
+
+
+.gallery-header h1{
+    margin:0;
+    color:#8B0000;
+    font-size:22px;
+    font-family:Georgia, serif;
+    letter-spacing:5px;
+    font-weight:normal;
+    text-transform:uppercase;
+}
+		
+.gallery-content{
+    position:relative;
+    top:20px;
+}
+		
+		
+		#signature-finale{
+     position:absolute;
+    top:8930px;
+    left:519px;
+    transform:translateX(-50%);
+    width:auto;
+    text-align:center;
+    color:#666;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+	padding-bottom:50px;
+}
+		
 	
 /* BOUTON BURGER */
 .burger {
@@ -54,6 +95,30 @@
 
 /* VERSION SMARTPHONE */
 @media screen and (max-width: 768px) {
+	
+	       #signature-finale{
+        position: static;
+        left: auto;
+        transform: none;
+        width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+	
+	.gallery-header{
+        position:static;
+        transform:none;
+        left:auto;
+        width:100%;
+        text-align:center;
+        margin:20px 0;
+    }
+
+    .gallery-header h1{
+        font-size:18px;
+        letter-spacing:3px;
+    }
+
 
    body {
         overflow-x: hidden;
@@ -84,6 +149,8 @@
     .menu a {
         border-top: none;
     }
+	
+	
     
 
     img {
@@ -104,6 +171,8 @@
         text-align: center;
     }
 	
+	
+	
 	/* SIGNATURE */
     img[src*="signrougefonce.png"] {
         order: 998;
@@ -114,7 +183,17 @@
         order: 999;
     }
 }
+
 	
+	
+		img{
+    transition:transform .3s ease;
+}
+
+img:hover{
+    transform:scale(1.02);
+}
+		
 </style>
 	
 	
@@ -767,7 +846,12 @@ function MM_preloadImages() { //v3.0
 
 </nav>
 	
+
+	<header class="gallery-header">
+    <h1>Paysages urbains</h1>
+</header>
 	
+	<div class="gallery-content">
 <div id="apDiv70"><img src="Paysages_Urbains_Cityscapes/20251125_135511.jpg" width="401" height="361" /></div>
 <div id="apDiv40"><img src="Paysages_Urbains_Cityscapes/ville.13.jpg" width="362" height="362" alt=""/></div>	
 <div id="apDiv25"><img src="Paysages_Urbains_Cityscapes/N.Y.37.jpg" width="424" height="402" alt=""/></div>	
@@ -814,6 +898,12 @@ function MM_preloadImages() { //v3.0
 <div id="apDiv45"><img src="Paysages_Urbains_Cityscapes/stairs.2.JPG" width="636" height="415" alt=""/></div>
 <div id="apDiv54"><img src="Signatures_Logos6/signrougefonce.png" width="39" height="145" alt=""/></div>
 <div id="apDiv53"><img src="Signatures_Logos6/logoP19carré_rouge.png" width="75" height="73" alt=""/></div>
+<div id="signature-finale">
+    Patrice Stutz<br>
+    Aquarelle · Peinture numérique
+	<div style="height:50px;"></div>
+</div>
+		</div>
 	
 <script>
 function toggleMenu() {
@@ -821,6 +911,6 @@ function toggleMenu() {
 }
 </script>
 	
-	
-</body>
+		
+	</body>
 </html>
