@@ -18,6 +18,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Georgia, serif;
@@ -25,11 +29,7 @@ body {
     color: #111;
 }
 
-/* ================= NAV ================= */
-
-header {
-    width: 100%;
-}
+/* ================= NAVIGATION ================= */
 
 .menu {
     list-style: none;
@@ -45,21 +45,29 @@ header {
     color: #000;
     font-size: 14px;
     letter-spacing: 2px;
-	font-family: arial;
+    font-family: Arial, sans-serif;
 }
 
 .menu a:hover {
     color: var(--accent);
 }
 
-/* ====== HERO  bloc à partir de Présentation / height modifie la hauteur de tout le bloc   ====== */
+/* ================= HERO ================= */
 
 .hero {
     height: 35vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
     text-align: center;
 }
 
@@ -75,31 +83,21 @@ header {
     color: #666;
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-size: 12  px;
-}
-	
-	.hero-content{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    font-size: 12px;
 }
 
-.hero-text{
-    text-align:center;
+.portrait {
+    width: 2cm;
+    height: 4cm;
+    object-fit: contain;
+    margin-left: 2cm;
 }
 
-.portrait{
-    width:2cm;
-    height:4cm;
-    object-fit:contain;
-    margin-left:2cm;
-}
-
-/* =========CV : margin réduit l'espace avant Présentation ================= */
+/* ================= CV ================= */
 
 .cv {
     max-width: 900px;
-    margin: 20px auto 80px auto;
+    margin: 20px auto 80px;
     padding: 0 20px;
 }
 
@@ -110,24 +108,6 @@ header {
     letter-spacing: 2px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 8px;
-    margin-bottom: 20px;
-}
-
-.cv p {
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-.timeline {
-    border-left: 0px solid #ddd;
-    padding-left: 15px;
-}
-
-.timeline div {
-    margin-bottom: 8px;
-}
-
-	.cv h2 {
     margin-top: 50px;
     margin-bottom: 20px;
 }
@@ -135,12 +115,47 @@ header {
 .cv h2:first-child {
     margin-top: 0;
 }
-	
+
+.cv p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.timeline div {
+    margin-bottom: 8px;
+}
+
+/* ================= ARTICLES ================= */
+
+.article-presse {
+    background: #fafafa;
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    margin-bottom: 35px;
+}
+
+.article-presse h3 {
+    margin-top: 0;
+    color: var(--red);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.article-presse a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.article-presse a:hover {
+    text-decoration: underline;
+}
+
 /* ================= CONTACT ================= */
 
 .contact {
     max-width: 700px;
-    margin: 100px auto;
+    margin: 80px auto 100px;
     padding: 0 20px;
 }
 
@@ -148,8 +163,14 @@ header {
     color: var(--red);
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 22px;
     margin-bottom: 20px;
-	font-size: 22px;
+}
+
+.contact-intro {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
 
 .contact input,
@@ -157,8 +178,20 @@ header {
     width: 100%;
     padding: 12px;
     margin-bottom: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     font-family: Arial, sans-serif;
+    transition: .3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.contact textarea {
+    min-height: 140px;
+    resize: vertical;
 }
 
 .contact button {
@@ -167,60 +200,40 @@ header {
     padding: 12px 18px;
     border: none;
     cursor: pointer;
+    letter-spacing: 1px;
 }
 
 .contact button:hover {
-    opacity: 0.85;
+    opacity: .85;
 }
 
-/* ================= FOOTER LINKS ================= */
-
-	
-	.links h2 {
-    font-size: 18px;
-}
-
-	
-.links {
-    max-width: 700px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
-
-.links a {
-    color: #8B0000;
-    text-decoration: none;
-}
-
-	/*chgt couleur au survol sites 2011 2020*/
-	
-	.links a {
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-  .links a:hover {
-    color: #279E9C;
-    letter-spacing: 1px;
-}
-	
-	
-	/*pour défilement fluide en revenant aux articles*/
-	
-	html {
-    scroll-behavior: smooth;
-}
-	
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:768px){
-    .hero h1 {
-        font-size: 38px;
-    }
+@media (max-width:768px) {
 
     .menu {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .portrait {
+        margin: 25px 0 0 0;
+        width: 120px;
+        height: auto;
+    }
+
+    .hero h1 {
+        font-size: 32px;
     }
 }
 
@@ -231,114 +244,120 @@ header {
 <body>
 
 <header>
-    <nav>
-        <ul class="menu">
-            <li><a href="index.html">ACCUEIL</a></li>
-            <li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
-            <li><a href="Landscapes.html">PAYSAGES</a></li>
-            <li><a href="Divers.html">DIVERS</a></li>
-            <li><a href="biocontact.html">BIO / CONTACT</a></li>
-        </ul>
-    </nav>
+<nav>
+<ul class="menu">
+<li><a href="index.html">ACCUEIL</a></li>
+<li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
+<li><a href="Landscapes.html">PAYSAGES</a></li>
+<li><a href="Divers.html">DIVERS</a></li>
+<li><a href="biocontact.html">BIO / CONTACT</a></li>
+</ul>
+</nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="hero-text">
-            <h1>PATRICE STUTZ</h1>
-            <p>Aquarelle · Peinture numérique</p>
-        </div>
+<div class="hero-text">
+<h1>PATRICE STUTZ</h1>
+<p>Aquarelle · Peinture numérique</p>
+</div>
 
-        <img src="Signatures_Logos6/signrougefonce.png" alt="signature" class="portrait">
+<img src="Signatures_Logos6/signrougefonce.png"
+alt="Signature Patrice Stutz"
+class="portrait">
+
+</div>
 
 </section>
 
-<!-- CV -->
 <section class="cv">
 
-    <h2>Présentation</h2>
-    <p>
-       Actuellement, peinture à l’aquarelle et numérique sur iPad, essentiellement des paysages urbains "modifiés", réalisés d'après de multiples photos assemblées sur Photoshop.<br> Débuts à la peinture à l’huile et aux pastels gras <br>
-       En 2011, stage en Dordogne avec Alvaro Castagnet, artiste uruguayen de renommée internationale.
-    </p>
+<h2>Présentation</h2>
 
-    <h2>Expositions</h2>
-    <div class="timeline">
-        <div>2011 — Ettuefont</div>
-        <div>2011 — Musée de Thann</div>
-        <div>2013 — Mairie de Steinbach</div>
-        <div>2014 — Expo collective Talents et Hobbies à Steinbach</div>
-        <div>2018 — Mairie de Thann</div>
-        <div>2019 — Mairie de Steinbach</div>
-    </div>
+<p>
+Je travaille aujourd'hui principalement à l'aquarelle et en peinture numérique sur iPad.
+Mes œuvres représentent essentiellement des paysages urbains réinterprétés à partir de multiples photographies assemblées sur Photoshop.
+</p>
 
-    <h2>Prix</h2>
-    <p>
-        2012 — Chevalet d’Or de Cernay<br>
-        2012 — Prix Office Municipal des Sports et de la Culture<br>
-        2020 — Prix des Vitrines de Cernay
-    </p>
+<p>
+Après des débuts à la peinture à l'huile et aux pastels gras, j'ai poursuivi mon parcours artistique à travers diverses expositions et distinctions.
+En 2011, j'ai participé à un stage en Dordogne avec Alvaro Castagnet, artiste uruguayen de renommée internationale.
+</p>
 
-    <h2 id="articles-presse">Articles de presse</h2>
-    <p>
-		
-		<div class="article-presse">
-        <i><strong>Article paru dans le journal L'Alsace</strong></i><br><br>								  
+<h2>Expositions</h2>
 
-Plus d’une vingtaine d’aquarelles seront exposées ces prochains jours dans la salle d’exposition du rez-de-chaussée de la mairie de Thann. Patrice Stutz, qui n’en est pas à sa première exposition, présente...
-    </p>
-	<a href="pressealsace.html">Lire l'article →</a><br><br>
-        </div>	
-	
-   <p> 
-	
-	<div class="article-presse">
-	<i><strong>Article paru dans le journal les DNA</strong></i><br>
-	
-	<br><i>Les visions urbaines de Patrice Stutz &nbsp;&nbsp;&nbsp;&nbsp; THANN – Exposition d'art</i><br><br>
+<div class="timeline">
+<div>2011 — Ettuefont</div>
+<div>2011 — Musée de Thann</div>
+<div>2013 — Mairie de Steinbach</div>
+<div>2014 — Expo collective Talents et Hobbies à Steinbach</div>
+<div>2018 — Mairie de Thann</div>
+<div>2019 — Mairie de Steinbach</div>
+</div>
 
-Patrice Stutz, aquarelliste steinbachois, livre ses <em>Visions urbaines</em>
-dans une très belle exposition accrochée...
-   </p>
-   <a href="pressedna.html">Lire l'article →</a><br><br>
-		 </div>	
+<h2>Prix</h2>
 
+<p>
+2012 — Chevalet d'Or de Cernay<br>
+2012 — Prix Office Municipal des Sports et de la Culture<br>
+2020 — Prix des Vitrines de Cernay
+</p>
 
+<h2 id="articles-presse">Articles de presse</h2>
 
+<div class="article-presse">
+
+<h3>Article paru dans L'Alsace</h3>
+
+<p>
+Plus d'une vingtaine d'aquarelles seront exposées ces prochains jours dans la salle d'exposition du rez-de-chaussée de la mairie de Thann.
+Patrice Stutz, qui n'en est pas à sa première exposition, présente...
+</p>
+
+<a href="pressealsace.html">Lire l'article →</a>
+
+</div>
+
+<div class="article-presse">
+
+<h3>Article paru dans les DNA</h3>
+
+<p>
+<em>Les visions urbaines de Patrice Stutz</em><br><br>
+
+Patrice Stutz, aquarelliste steinbachois, livre ses visions urbaines dans une très belle exposition accrochée...
+</p>
+
+<a href="pressedna.html">Lire l'article →</a>
+
+</div>
 
 </section>
 
-<!-- CONTACT -->
 <section class="contact">
 
-    <h2>Contact</h2>
+<h2>Contact</h2>
 
-    <form action="https://formspree.io/f/xaqkkyky" method="POST">
+<p class="contact-intro">
+Pour toute question, demande d'exposition ou simplement pour échanger autour de mon travail, vous pouvez me contacter via ce formulaire.
+</p>
 
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" required></textarea>
+<form action="https://formspree.io/f/xaqkkyky" method="POST">
 
-        <button type="submit">Envoyer</button>
+<input type="text" name="nom" placeholder="Nom" required>
 
-    </form>
+<input type="email" name="email" placeholder="Email" required>
 
-</section>
+<textarea name="message" placeholder="Message" required></textarea>
 
-<!-- LINKS -->
-<section class="links">
+<button type="submit">Envoyer</button>
 
-    <h2>SITES ANCIENS</h2>
-
-    <p>
-        <a href="http://stutz.watercolour.free.fr/" target="_blank">Site 2020</a><br><br>
-        <a href="http://stutzbp.free.fr/" target="_blank">Site 2011</a>
-    </p>
+</form>
 
 </section>
 
 </body>
 </html>
+

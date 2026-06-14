@@ -1,208 +1,289 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="fr">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">	
-	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Patrice Stutz Aquarelles</title>
 
 <meta name="author" content="Patrice Stutz">
-<meta name="description" content="Aquarelles et huiles de paysages urbains, paysages, intérieurs et divers.">
-<meta name="keywords" content="art, artistique, peinture, aquarelle, watercolour, art contemporain, paysages urbains">
-
+<meta name="description" content="Aquarelles et peintures numériques de paysages urbains, paysages et scènes diverses.">
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
 
-    .menu {
-        list-style: none;
-        margin: 15px;
-        padding: 0;
-        background-color: #FFFFFF;
-        display: flex;
-        justify-content: left;
-    }
-
-    .menu li {
-        margin: 0;
-    }
-
-    .menu a {
-        font-size: 14px;    /* taille fixe */
-		letter-spacing:2px;
-		display: block;
-        padding: 15px 25px;
-        color: black;
-        text-decoration: none;
-    }
-
-    .menu a:hover {
-        color: #279E9C;
-    }
-	
-	
-/* BOUTON BURGER */
-.burger {
-    display: none;
-    font-size: 30px;
-    padding: 15px;
-    cursor: pointer;
+:root{
+    --accent:#279E9C;
+    --red:#8B0000;
 }
 
-/* VERSION SMARTPHONE */
-@media screen and (max-width: 768px) {
-
-    .burger {
-        display: block;
-    }
-
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-
-    .menu a {
-        border-top: none;
-    }
-
-	
-	  /* AJOUT RESPONSIVE */
-        body {
-            overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-			display: block;
-        }
-
-        #apDiv7,
-        #apDiv2,
-	    #apDiv3,
-        #apDiv4,
-        #apDiv5 {
-           position: static !important;
-    left: auto !important;
-    top: auto !important;
-    width: auto;
-    height: auto;
-    margin: 20px auto;
-    text-align: center;
+*{
+    box-sizing:border-box;
 }
-        }
-  
-	
-	
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#fff;
+    color:#000;
+}
+
+/* ================= MENU ================= */
+
+.menu{
+    list-style:none;
+    margin:20px;
+    padding:0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#000;
+    font-size:14px;
+    letter-spacing:2px;
+    padding:10px 15px;
+}
+
+.menu a:hover{
+    color:var(--accent);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    max-width:1000px;
+    margin:60px auto 100px auto;
+    padding:0 20px;
+}
+
+.hero-inner{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+}
+
+.hero-logo img{
+    width:260px;
+    height:auto;
+}
+
+.hero-image img{
+    width:320px;
+    height:auto;
+    display:block;
+}
+
+.hero-signature img{
+    width:45px;
+    height:auto;
+}
+
+/* ================= TEXTE INTRO ================= */
+
+.intro{
+    max-width:700px;
+    margin:120px auto 60px auto;
+    text-align:center;
+}
+
+.intro p{
+    line-height:1.8;
+    color:#555;
+    font-style:italic;
+}
+
+/* ================= MOSAIQUE ================= */
+
+.home-gallery{
+    max-width:1100px;
+    margin:0 auto 100px auto;
+    padding:0 20px;
+}
+
+.home-gallery h2{
+    text-align:center;
+    font-size:18px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.mosaic{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-template-rows:220px 220px;
+    gap:12px;
+}
+
+.mosaic a{
+    display:block;
+    overflow:hidden;
+}
+
+.mosaic img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.mosaic img:hover{
+    transform:scale(1.04);
+}
+
+.big{
+    grid-row:1 / span 2;
+}
+
+/* ================= MOBILE ================= */
+
+.burger{
+    display:none;
+    font-size:30px;
+    padding:15px;
+    cursor:pointer;
+}
+
+@media screen and (max-width:768px){
+
+    .burger{
+        display:block;
+    }
+
+    .menu{
+        display:none;
+        flex-direction:column;
+        align-items:center;
+        margin:0;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .hero{
+        margin:30px auto 60px auto;
+    }
+
+    .hero-inner{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .hero-logo img{
+        width:220px;
+    }
+
+    .hero-image img{
+        width:100%;
+        max-width:320px;
+    }
+
+    .hero-signature{
+        display:none;
+    }
+
+    .mosaic{
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+    }
+
+    .big{
+        grid-row:auto;
+    }
+
+    .mosaic a{
+        height:250px;
+    }
+}
+
 </style>
-	
-	
-<style type="text/css">
-#apDiv2 {
-    position: absolute;
-    width: 300px;
-    height: 298px;
-    z-index: 5;
-    left: 428px;
-    top: 203px;
-}
-#apDiv3 {
-    position: absolute;
-    width: 36px;
-    height: 34px;
-    z-index: 5;
-    left: 229px;
-    top: 415px;
-}
-#apDiv4 {
-    position: absolute;
-    width: 43px;
-    height: 158px;
-    z-index: 5;
-    left: 767px;
-    top: 340px;
-}
-#apDiv5 {
-    position: absolute;
-    width: 66px;
-    height: 207px;
-    z-index: 5;
-    left: 1048px;
-    top: 694px;
-}
-#apDiv7 {
-    position: absolute;
-    width: 252px;
-    height: 129px;
-    z-index: 1;
-    left: 144px;
-    top: 261px;
-}
-body {
-    background-color: #FFFEFE;
-}
-#apDiv {
-    position: absolute;
-    width: 49px;
-    height: 47px;
-    z-index: 6;
-    left: -529px;
-    top: 64px;
-}
-body,td,th {
-    color: #000000;
-}
-</style>
-<script type="text/javascript">
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
-</script>
 </head>
 
-<body onload="MM_preloadImages('A.Index6/long_swap_paysages_urbains.jpg')">
-	
+<body>
+
 <nav>
 
-    <!-- Bouton burger -->
-  <div class="burger" onclick="toggleMenu()">
-        ☰
-    </div>
+<div class="burger" onclick="toggleMenu()">☰</div>
 
-    <!-- Menu -->
-  <ul class="menu" id="menu">
-        <li><a href="index.html">ACCUEIL</a></li>
-        <li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
-        <li><a href="Landscapes.html">PAYSAGES</a></li>
-        <li><a href="Divers.html">DIVERS</a></li>
-        <li><a href="biocontact.html">BIO / CONTACT</a></li>
-    </ul>
+<ul class="menu" id="menu">
+    <li><a href="index.html">ACCUEIL</a></li>
+    <li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
+    <li><a href="Landscapes.html">PAYSAGES</a></li>
+    <li><a href="Divers.html">DIVERS</a></li>
+    <li><a href="biocontact.html">BIO / CONTACT</a></li>
+</ul>
 
 </nav>
-	
-	
-<div id="apDiv7"><img src="A.Index6/psaquarelles.png" width="251" height="130" alt=""/></div>
-<div id="apDiv2"><img src="A.Index6/imageaccueil.jpg" width="301" height="296" alt=""/></div>
-<div id="apDiv3"><img src="A.Index6/carrerougefonce.png" width="54" height="52" alt=""/></div>
-<div id="apDiv4"><img src="A.Index6/signrougefonce.png" alt="" width="45" height="159"/></div>
-	
+
+<section class="hero">
+
+<div class="hero-inner">
+
+    <div class="hero-logo">
+        <img src="A.Index6/psaquarelles.png" alt="Patrice Stutz">
+    </div>
+
+    <div class="hero-image">
+        <img src="A.Index6/imageaccueil.jpg" alt="">
+    </div>
+
+    <div class="hero-signature">
+        <img src="A.Index6/signrougefonce.png" alt="">
+    </div>
+
+</div>
+
+</section>
+
+<section class="intro">
+
+<p>
+Une sélection d'aquarelles et de peintures numériques inspirées de villes réelles,
+recomposées à partir de multiples points de vue.
+</p>
+
+</section>
+
+<section class="home-gallery">
+
+<h2>SÉLECTION DE PAYSAGES URBAINS</h2>
+
+<div class="mosaic">
+
+    <a href="Accueil.cityscapes.html" class="big">
+        <img src="Paysages_Urbains_Cityscapes/London.JPG" alt="">
+    </a>
+
+    <a href="Accueil.cityscapes.html">
+        <img src="Paysages_Urbains_Cityscapes/crépuscule-tordu.JPG" alt="">
+    </a>
+
+    <a href="Accueil.cityscapes.html">
+	<img src="Paysages_Urbains_Cityscapes/morning.light.jpg" width="1596" height="2445" alt=""/> 
+	</a>
+
+    <a href="Accueil.cityscapes.html">
+        <img src="Paysages_Urbains_Cityscapes/Bruxelles6.JPG" alt="">
+    </a>
+
+    <a href="Accueil.cityscapes.html">
+        <img src="Paysages_Urbains_Cityscapes/BigBen.JPG" alt="">
+    </a>
+
+</div>
+
+</section>
 
 <script>
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
 }
 </script>
-	
+
 </body>
 </html>
+
