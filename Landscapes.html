@@ -1,91 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+
 <title>Aquarelles Stutz</title>
-	
-	<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif !important;
-        font-weight: normal !important;
-        font-style: normal !important;
-    }
 
-    .menu {
-        list-style: none;
-        margin: 15px;
-        padding: 0;
-        background-color: #FFFFFF;
-        display: flex;
-        justify-content: left;
-    }
-
-    .menu li {
-        margin: 0;
-    }
-
-    .menu a {
-        display: block;
-        padding: 15px 25px;
-		font-family: Arial, sans-serif;
-        font-size: 14px;    /* taille fixe */
-		letter-spacing:2px;
-        font-weight: normal;
-        font-style: normal;
-		
-        color: black;
-        text-decoration: none;
-    }
-
-    .menu a:hover {
-        color: #279E9C;
-    }
-		
-		
-			/*titre en-tête*/
-	.gallery-header{
-    position:absolute;
-    top:150px;
-    left:519px;
-    transform:translateX(-50%);
-    z-index:100;
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+	padding-bottom: 4cm;
 }
 
+/* MENU */
+.menu {
+    list-style: none;
+    margin: 15px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
 
-.gallery-header h1{
-    margin:0;
-    color:#8B0000;
-    font-size:22px;
-    font-family:Georgia, serif;
-    letter-spacing:5px;
-    font-weight:normal;
-    text-transform:uppercase;
+.menu a {
+    display: block;
+    padding: 15px 25px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
 }
-		
-.gallery-content{
-    position:relative;
-    top:50px;
-}
-		
-		#signature-finale{
-    position:absolute;
-     top:2200px;
-    left:519px;
-    transform:translateX(-50%);
-    width:auto;
-    text-align:center;
-    color:#666;
-    font-size:13px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-	
-	
-	
-/* BOUTON BURGER */
+
+/* BURGER */
 .burger {
     display: none;
     font-size: 30px;
@@ -93,235 +40,159 @@
     cursor: pointer;
 }
 
-/* VERSION SMARTPHONE */
-@media screen and (max-width: 768px) {
-	
-	#signature-finale{
-        position: static;
-        left: auto;
-        transform: none;
-        width: 100%;
-        text-align: center;
-        margin: 20px 0;
-    }
-	
-	.gallery-header{
-        position:static;
-        transform:none;
-        left:auto;
-        width:100%;
-        text-align:center;
-        margin:20px 0;
-    }
+/* TITRE */
+.gallery-header {
+    text-align: center;
+    margin-top: 60px;
+}
 
-    .gallery-header h1{
-        font-size:18px;
-        letter-spacing:3px;
-    }
+.gallery-header h1 {
+    color: #8B0000;
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
 
+/* GALERIE : on garde les tailles réelles */
+.gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 40px;
+}
 
-    .burger {
-        display: block;
-    }
+/* lignes comme ancienne composition */
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+/* images EXACTEMENT comme avant */
+.img570 { width: 570px; height: auto; }
+.img447 { width: 447px; height: auto; }
+.img374 { width: 374px; height: auto; }
+.img472 { width: 472px; height: auto; }
+
+/* signature/logo */
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.signature {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .burger { display: block; }
 
     .menu {
         display: none;
         flex-direction: column;
-        width: 100%;
     }
 
-    .menu.active {
-        display: flex;
-    }
+    .menu.active { display: flex; }
 
-    .menu a {
-        border-top: none;
-    }
-
-	 body {
-        overflow-x: hidden;
-		display: flex;
+    .row {
         flex-direction: column;
-        align-items: center; 
-    }
-	
-	nav {
-        width: 100%;
-        align-self: stretch;
+        align-items: center;
+        gap: 20px;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-	    margin-left: auto;
-        margin-right: auto;
+    .img570,
+    .img447,
+    .img374,
+    .img472 {
+        width: 95%;
+        max-width: 570px;
     }
-
-   [id^="apDiv"] {
-	 position: static !important;
-        left: auto !important;
-        top: auto !important;
-        width: auto !important;
-        height: auto !important;
-        margin: 20px auto;
-        text-align: center;
-	    display: flex;
-        justify-content: center;
-    }
-	
-	/* SIGNATURE */
-    img[src*="signrougefonce.png"] {
-        order: 998;
-		margin-bottom: 40px;
-    }
-
-    /* LOGO */
-    img[src*="logoP19carré_rouge.png"] {
-        order: 999;
-    }
-}	
-		
-		
-
-</style>
-	
-	
-<style type="text/css">
-#apDiv1 {
-    position: absolute;
-    width: 99px;
-    height: 67px;
-    z-index: 1;
-    left: 86px;
-    top: 1453px;
-}
-#apDiv2 {
-    position: absolute;
-    width: 102px;
-    height: 67px;
-    z-index: 2;
-    left: 214px;
-    top: 580px;
-}
-#apDiv3 {
-    position: absolute;
-    width: 102px;
-    height: 66px;
-    z-index: 3;
-    left: 214px;
-    top: 154px;
-}
-#apDiv4 {
-    position: absolute;
-    width: 132px;
-    height: 79px;
-    z-index: 4;
-    left: 213px;
-    top: 1028px;
-}
-#apDiv5 {
-    position: absolute;
-    width: 131px;
-    height: 103px;
-    z-index: 5;
-    left: 570px;
-    top: 1454px;
-}
-#apDiv6 {
-	position: absolute;
-	width: 96px;
-	height: 97px;
-	z-index: 6;
-	left: 21px;
-	top: 13px;
-}
-#apDiv7 {
-    position: absolute;
-    width: 39px;
-    height: 113px;
-    z-index: 7;
-    left: 892px;
-    top: 2009px;
-}
-body {
-    background-color: #FFFFFF;
-    background-repeat: no-repeat;
-    margin-bottom: 100px;
-}
-#apDiv8 {
-    position: absolute;
-    width: 40px;
-    height: 145px;
-    z-index: 1;
-    left: 888px;
-    top: 1838px;
-}
-#apDiv9 {
-    position: absolute;
-    width: 99px;
-    height: 205px;
-    z-index: 1;
-    left: 579px;
-    top: 1239px;
 }
 </style>
-	
-<script type="text/javascript">
-function MM_preloadImages() { //v3.0
-  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
-}
-</script>
 </head>
 
 <body>
-	
-	<nav>
 
-    <!-- Bouton burger -->
-  <div class="burger" onclick="toggleMenu()">
-        ☰
-    </div>
+<nav>
+    <div class="burger" onclick="toggleMenu()">☰</div>
 
-    <!-- Menu -->
-  <ul class="menu" id="menu">
+    <ul class="menu" id="menu">
         <li><a href="index.html">ACCUEIL</a></li>
         <li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
         <li><a href="Landscapes.html">PAYSAGES</a></li>
         <li><a href="Divers.html">DIVERS</a></li>
         <li><a href="biocontact.html">BIO / CONTACT</a></li>
     </ul>
-
 </nav>
-	
+
 <header class="gallery-header">
     <h1>Paysages</h1>
 </header>
+
+<div class="gallery">
+
+	<!-- IMAGE 1 seule -->
+     <div class="row single">
+        <img class="img570" src="Paysages_Landscapes6/P1110385.jpg">
+	</div>
 	
-	<div class="gallery-content">
-<div id="apDiv2"><img src="Paysages_Landscapes6/P1110385.jpg" width="570" height="370" /></div>
-<div id="apDiv3"><img src="Paysages_Landscapes6/P1110384.jpg" width="570" height="366" /></div>
-<div id="apDiv4"><img src="Paysages_Landscapes6/forest.jpg" width="570" height="347" /></div>
-<div id="apDiv1"><img src="Paysages_Landscapes6/P1110386.jpg" width="447" height="292" /></div>	
-<div id="apDiv5"><img src="Paysages_Landscapes6/campagne_allemande.JPG" width="374" height="292" /></div>
-<div id="apDiv7"><img src="Signatures_Logos6/logoP19carré_rouge.png" width="39" height="37" alt=""/></div>
-<div id="apDiv8"><img src="Signatures_Logos6/signrougefonce.png" alt="" width="44" height="145"/></div> 
-		</div>
-	
-<div id="signature-finale">
-    Patrice Stutz<br>
-    Aquarelle · Peinture numérique
-    <div style="height:100px;"></div>
+	<!-- IMAGE 2 seule -->
+	 <div class="row single">
+        <img class="img570" src="Paysages_Landscapes6/P1110384.jpg">
+    </div>
+
+    <!-- IMAGE 3 seule -->
+    <div class="row single">
+        <img class="img570" src="Paysages_Landscapes6/forest.jpg">
+    </div>
+
+    <!-- IMAGE 4 + 5 côte à côte -->
+    <div class="row duo">
+        <img class="img447" src="Paysages_Landscapes6/P1110386.jpg">
+        <img class="img374" src="Paysages_Landscapes6/campagne_allemande.JPG">
+    </div>
+
+    <!-- IMAGE 6 seule -->
+    <div class="row single">
+        <img class="img472" src="Paysages_Landscapes6/coubisou.JPG">
+    </div>
+
 </div>
 	
+
+<div class="footer-block">
+
+    <img src="Signatures_Logos6/logoP19carré_rouge.png" width="39">
+
+    <img src="Signatures_Logos6/signrougefonce.png" width="44">
+
+    <div class="signature">
+        Patrice Stutz<br>
+        Aquarelle · Peinture numérique
+    </div>
+
+</div>
+
 <script>
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
 }
 </script>
-	
-	
+
 </body>
 </html>
