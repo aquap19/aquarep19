@@ -125,6 +125,81 @@ body {
     margin-bottom: 8px;
 }
 
+	
+	
+	
+/* ================= CORRECTION & BULLE INSTAGRAM ================= */
+.insta-container {
+    display: flex;
+    justify-content: center; /* Centre le logo sous votre formulaire */
+    margin-top: -90px;        /* Espace suffisant sous le bouton Envoyer */
+    margin-bottom: 40px;
+}
+
+.insta-link {
+    position: relative;      /* Indispensable pour aligner la bulle par rapport au logo */
+    display: inline-block;
+    text-decoration: none;
+}
+
+.insta-logo {
+    width: 32px;             /* Taille PC idéale */
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+/* --- Style de la bulle (cachée par défaut) --- */
+.insta-link .tooltip-text {
+    visibility: hidden;      /* Reste invisible */
+    opacity: 0;              /* Transparente pour l'effet de fondu */
+    position: absolute;
+    bottom: 130%;            /* Se place juste au-dessus du logo */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Légèrement décalée vers le bas pour l'animation */
+    
+    /* Design de la bulle */
+    background-color: #222;  /* Fond sombre très élégant */
+    color: #fff;             /* Texte blanc */
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 4px;      /* Angles légèrement arrondis */
+    white-space: nowrap;     /* Évite que le mot se coupe en deux */
+    z-index: 10;
+    
+    /* Animation fluide */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* --- Petite flèche sous la bulle --- */
+.insta-link .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;               /* Au bas de la bulle */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #222 transparent transparent transparent; /* Crée un petit triangle pointant vers le bas */
+}
+
+/* --- Actions au survol de la souris (Hover) --- */
+.insta-link:hover .insta-logo {
+    transform: scale(1.08);  /* Le logo grossit subtilement */
+}
+
+.insta-link:hover .tooltip-text {
+    visibility: visible;     /* Devient visible */
+    opacity: 1;              /* Devient opaque */
+    transform: translateX(-50%) translateY(0); /* Remonte doucement à sa position finale */
+}
+	
+	
+	
+	
 /* ================= ARTICLES ================= */
 
 .article-presse {
@@ -367,6 +442,14 @@ Pour toute question ou commentaire concernant mon travail, n'hésitez pas à me 
 </form>
 
 </section>
+	
+	 <!-- BLOC INSTAGRAM -->
+    <div class="insta-container">
+        <a href="https://www.instagram.com/patrice.stutz.aquarelle/" target="_blank" class="insta-link">
+           <img src="Bio6/logo.insta.png" alt="Instagram" class="insta-logo">
+            <span class="tooltip-text">Instagram</span>
+			        </a>
+    </div>
 
 </body>
 </html>
