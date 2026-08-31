@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,10 +10,15 @@
 
 <style>
 
+/* ================= VARIABLES ================= */
+
 :root {
     --accent: #279E9C;
     --red: #8B0000;
 }
+
+
+/* ================= BASE ================= */
 
 * {
     box-sizing: border-box;
@@ -29,12 +35,14 @@ body {
     color: #111;
 }
 
+
 /* ================= NAVIGATION ================= */
 
 .menu {
     list-style: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 25px;
     padding: 20px;
     margin: 0;
@@ -46,16 +54,18 @@ body {
     font-size: 14px;
     letter-spacing: 2px;
     font-family: Arial, sans-serif;
+    transition: color 0.2s ease;
 }
 
 .menu a:hover {
     color: var(--accent);
 }
 
+
 /* ================= HERO ================= */
 
 .hero {
-    height: 35vh;
+    min-height: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +103,7 @@ body {
     margin-left: 2cm;
 }
 
+
 /* ================= CV ================= */
 
 .cv {
@@ -125,81 +136,7 @@ body {
     margin-bottom: 8px;
 }
 
-	
-	
-	
-/* ================= CORRECTION & BULLE INSTAGRAM ================= */
-.insta-container {
-    display: flex;
-    justify-content: center; /* Centre le logo sous votre formulaire */
-    margin-top: -90px;        /* Espace suffisant sous le bouton Envoyer */
-    margin-bottom: 40px;
-}
 
-.insta-link {
-    position: relative;      /* Indispensable pour aligner la bulle par rapport au logo */
-    display: inline-block;
-    text-decoration: none;
-}
-
-.insta-logo {
-    width: 32px;             /* Taille PC idéale */
-    height: 32px;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-/* --- Style de la bulle (cachée par défaut) --- */
-.insta-link .tooltip-text {
-    visibility: hidden;      /* Reste invisible */
-    opacity: 0;              /* Transparente pour l'effet de fondu */
-    position: absolute;
-    bottom: 130%;            /* Se place juste au-dessus du logo */
-    left: 50%;
-    transform: translateX(-50%) translateY(10px); /* Légèrement décalée vers le bas pour l'animation */
-    
-    /* Design de la bulle */
-    background-color: #222;  /* Fond sombre très élégant */
-    color: #fff;             /* Texte blanc */
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    border-radius: 4px;      /* Angles légèrement arrondis */
-    white-space: nowrap;     /* Évite que le mot se coupe en deux */
-    z-index: 10;
-    
-    /* Animation fluide */
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-}
-
-/* --- Petite flèche sous la bulle --- */
-.insta-link .tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;               /* Au bas de la bulle */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #222 transparent transparent transparent; /* Crée un petit triangle pointant vers le bas */
-}
-
-/* --- Actions au survol de la souris (Hover) --- */
-.insta-link:hover .insta-logo {
-    transform: scale(1.08);  /* Le logo grossit subtilement */
-}
-
-.insta-link:hover .tooltip-text {
-    visibility: visible;     /* Devient visible */
-    opacity: 1;              /* Devient opaque */
-    transform: translateX(-50%) translateY(0); /* Remonte doucement à sa position finale */
-}
-	
-	
-	
-	
 /* ================= ARTICLES ================= */
 
 .article-presse {
@@ -225,6 +162,7 @@ body {
 .article-presse a:hover {
     text-decoration: underline;
 }
+
 
 /* ================= CONTACT ================= */
 
@@ -255,7 +193,8 @@ body {
     margin-bottom: 12px;
     border: 1px solid #ddd;
     font-family: Arial, sans-serif;
-    transition: .3s;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
 .contact input:focus,
@@ -276,24 +215,138 @@ body {
     border: none;
     cursor: pointer;
     letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.2s ease;
 }
 
 .contact button:hover {
-    opacity: .85;
+    opacity: 0.85;
 }
 
-/* ================= RESPONSIVE ================= */
 
-@media (max-width:768px) {
+/* ================= INSTAGRAM ================= */
+
+.insta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -90px;
+    margin-bottom: 40px;
+}
+
+.insta-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+
+/* Logo Instagram en SVG */
+
+.insta-logo {
+    width: 32px;
+    height: 32px;
+    display: block;
+    fill: #000;
+    transition: transform 0.2s ease;
+}
+
+
+/* ================= BULLE INSTAGRAM ================= */
+
+.insta-link .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(10px);
+
+    background-color: #222;
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    padding: 6px 12px;
+    border-radius: 4px;
+
+    white-space: nowrap;
+    z-index: 10;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* Petite flèche */
+
+.insta-link .tooltip-text::after {
+    content: "";
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    margin-left: -5px;
+
+    border-width: 5px;
+    border-style: solid;
+
+    border-color:
+        #222
+        transparent
+        transparent
+        transparent;
+}
+
+
+/* Effet au survol sur ordinateur */
+
+.insta-link:hover .insta-logo {
+    transform: scale(1.08);
+}
+
+.insta-link:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    /* Navigation */
 
     .menu {
         flex-direction: column;
-        align-items: center;
         gap: 10px;
+        padding: 18px 10px;
     }
 
+    .menu a {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Hero */
+
     .hero {
-        height: auto;
+        min-height: auto;
         padding: 40px 20px;
     }
 
@@ -301,20 +354,65 @@ body {
         flex-direction: column;
     }
 
-    .portrait {
-        margin: 25px 0 0 0;
-        width: 120px;
-        height: auto;
-    }
-
     .hero h1 {
         font-size: 32px;
+        letter-spacing: 4px;
     }
-	
-	  .portrait{
-        width:auto;
-        height:80px;
-        margin-top:15px;
+
+    .hero p {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .portrait {
+        width: auto;
+        height: 80px;
+        margin: 20px 0 0 0;
+    }
+
+
+    /* Texte */
+
+    .cv {
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+
+    .cv p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    /* Contact */
+
+    .contact {
+        margin: 60px auto 80px;
+        padding: 0 20px;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 16px;
+    }
+
+
+    /* Instagram */
+
+    .insta-container {
+        margin-top: -40px;
+        margin-bottom: 30px;
+    }
+
+    .insta-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Pas de bulle sur téléphone */
+
+    .insta-link .tooltip-text {
+        display: none;
     }
 
 }
@@ -323,38 +421,77 @@ body {
 
 </head>
 
+
 <body>
 
+
+<!-- ================= NAVIGATION ================= -->
+
 <header>
+
 <nav>
+
 <ul class="menu">
-<li><a href="index.html">ACCUEIL</a></li>
-<li><a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a></li>
-<li><a href="Landscapes.html">PAYSAGES</a></li>
-<li><a href="Divers.html">DIVERS</a></li>
-<li><a href="biocontact.html">BIO / CONTACT</a></li>
+
+<li>
+<a href="index.html">ACCUEIL</a>
+</li>
+
+<li>
+<a href="Accueil.cityscapes.html">PAYSAGES URBAINS</a>
+</li>
+
+<li>
+<a href="Landscapes.html">PAYSAGES</a>
+</li>
+
+<li>
+<a href="Divers.html">DIVERS</a>
+</li>
+
+<li>
+<a href="biocontact.html">BIO / CONTACT</a>
+</li>
+
 </ul>
+
 </nav>
+
 </header>
+
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <div class="hero-content">
 
 <div class="hero-text">
+
 <h1>PATRICE STUTZ</h1>
-<p>Aquarelle · Peinture numérique</p>
+
+<p>
+Aquarelle · Peinture numérique
+</p>
+
 </div>
 
-<img src="Signatures_Logos6/signrougefonce.png"
+
+<img
+src="Signatures_Logos6/signrougefonce.png"
 alt="Signature Patrice Stutz"
-class="portrait">
+class="portrait"
+>
 
 </div>
 
 </section>
 
+
+<!-- ================= CV ================= -->
+
 <section class="cv">
+
 
 <h2>Présentation</h2>
 
@@ -363,94 +500,225 @@ Je travaille aujourd'hui principalement à l'aquarelle et en peinture numérique
 Mes œuvres représentent essentiellement des paysages urbains réinterprétés à partir de multiples photographies assemblées sur Photoshop.
 </p>
 
+
 <p>
 Après des débuts à la peinture à l'huile et aux pastels gras, j'ai poursuivi mon parcours artistique à travers diverses expositions et distinctions.
-<br><br>	
+<br><br>
+
 En 2011, j'ai participé à un stage en Dordogne avec Alvaro Castagnet, artiste uruguayen de renommée mondiale, star des biennales internationales (USA, Asie, Europe), primé par l'AWS. Son style, très spontané et expressif, est centré sur des scènes urbaines à fort impact visuel.
-<br>
+
+<br><br>
+
 En 2026, j'ai participé à un stage d'une semaine dans le Territoire de Belfort avec Joëlle Krupa-Astruc qui est une figure incontournable de l’aquarelle en France. Elle maîtrise parfaitement les cycles de l'eau et est reconnue pour être une excellente pédagogue, elle transmet son savoir avec beaucoup de clarté.
 </p>
+
 
 <h2>Expositions</h2>
 
 <div class="timeline">
+
 <div>2011 — Ettuefont</div>
 <div>2011 — Musée de Thann</div>
 <div>2013 — Mairie de Steinbach</div>
 <div>2014 — Expo collective Talents et Hobbies à Steinbach</div>
 <div>2018 — Mairie de Thann</div>
 <div>2019 — Mairie de Steinbach</div>
+
 </div>
+
 
 <h2>Prix</h2>
 
 <p>
+
 2012 — Chevalet d'Or de Cernay<br>
 2012 — Prix Office Municipal des Sports et de la Culture<br>
 2020 — Prix des Vitrines de Cernay
+
 </p>
 
-<h2 id="articles-presse">Articles de presse</h2>
+
+<h2 id="articles-presse">
+Articles de presse
+</h2>
+
 
 <div class="article-presse">
 
-<h3>Article paru dans L'Alsace</h3>
+<h3>
+Article paru dans L'Alsace
+</h3>
 
 <p>
 Plus d'une vingtaine d'aquarelles seront exposées ces prochains jours dans la salle d'exposition du rez-de-chaussée de la mairie de Thann.
 Patrice Stutz, qui n'en est pas à sa première exposition, présente...
 </p>
 
-<a href="pressealsace.html">Lire l'article →</a>
+<a href="pressealsace.html">
+Lire l'article →
+</a>
 
 </div>
+
 
 <div class="article-presse">
 
-<h3>Article paru dans les DNA</h3>
+<h3>
+Article paru dans les DNA
+</h3>
 
 <p>
-<em>Les visions urbaines de Patrice Stutz</em><br><br>
+
+<em>Les visions urbaines de Patrice Stutz</em>
+
+<br><br>
 
 Patrice Stutz, aquarelliste steinbachois, livre ses visions urbaines dans une très belle exposition accrochée...
+
 </p>
 
-<a href="pressedna.html">Lire l'article →</a>
+<a href="pressedna.html">
+Lire l'article →
+</a>
 
 </div>
 
+
 </section>
+
+
+<!-- ================= CONTACT ================= -->
 
 <section class="contact">
 
-<h2>Contact</h2>
+<h2>
+Contact
+</h2>
 
 <p class="contact-intro">
-Pour toute question ou commentaire concernant mon travail, n'hésitez pas à me laisser un message.
+Pour toute question ou commentaire concernant mon travail,
+n'hésitez pas à me laisser un message.
 </p>
 
-<form action="https://formspree.io/f/xaqkkyky" method="POST">
 
-<input type="text" name="nom" placeholder="Nom" required>
+<form
+action="https://formspree.io/f/xaqkkyky"
+method="POST"
+>
 
-<input type="email" name="email" placeholder="Email" required>
+<input
+type="text"
+name="nom"
+placeholder="Nom"
+required
+>
 
-<textarea name="message" placeholder="Message" required></textarea>
+<input
+type="email"
+name="email"
+placeholder="Email"
+required
+>
 
-<button type="submit">Envoyer</button>
+<textarea
+name="message"
+placeholder="Message"
+required
+></textarea>
+
+<button type="submit">
+Envoyer
+</button>
 
 </form>
 
 </section>
-	
-	 <!-- BLOC INSTAGRAM -->
-    <div class="insta-container">
-        <a href="https://www.instagram.com/patrice.stutz.aquarelle/" target="_blank" class="insta-link">
-           <img src="Bio6/logo.insta.png" alt="Instagram" class="insta-logo">
-            <span class="tooltip-text">Instagram</span>
-			        </a>
-    </div>
+
+
+<!-- ================= INSTAGRAM ================= -->
+
+<div class="insta-container">
+
+<a
+href="https://www.instagram.com/patrice.stutz.aquarelle/"
+target="_blank"
+rel="noopener noreferrer"
+class="insta-link"
+aria-label="Instagram"
+>
+
+<svg
+    class="insta-logo"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+>
+    <defs>
+        <linearGradient
+            id="instagram-gradient"
+            x1="0%"
+            y1="100%"
+            x2="100%"
+            y2="0%"
+        >
+            <stop offset="0%" stop-color="#FFD600"/>
+            <stop offset="25%" stop-color="#FF7A00"/>
+            <stop offset="50%" stop-color="#FF0069"/>
+            <stop offset="75%" stop-color="#D300C5"/>
+            <stop offset="100%" stop-color="#7638FA"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Carré extérieur arrondi avec dégradé Instagram -->
+    <rect
+        x="1"
+        y="1"
+        width="22"
+        height="22"
+        rx="6"
+        fill="url(#instagram-gradient)"
+    />
+
+    <!-- Carré intérieur blanc arrondi -->
+    <rect
+        x="5"
+        y="5"
+        width="14"
+        height="14"
+        rx="4"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="1.1"
+    />
+
+    <!-- Objectif -->
+    <circle
+        cx="12"
+        cy="12"
+        r="3.5"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="1.1"
+    />
+
+    <!-- Petit point en haut à droite -->
+    <circle
+        cx="16"
+        cy="8"
+        r="0.8"
+        fill="#ffffff"
+    />
+</svg>
+
+
+<span class="tooltip-text">
+Instagram
+</span>
+
+</a>
+
+</div>
+
 
 </body>
-</html>
 
+</html>
