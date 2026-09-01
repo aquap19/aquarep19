@@ -19,7 +19,7 @@
         padding: 0;
         background-color: #FFFFFF;
         display: flex;
-        justify-content: left;
+        justify-content: center;
     }
 
     .menu li {
@@ -48,7 +48,7 @@
 	.gallery-header{
     position:absolute;
     top:120px;
-    left:519px;
+    left:50%;
     transform:translateX(-50%);
     z-index:100;
 }
@@ -67,7 +67,7 @@
 	   #signature-finale{
     position:absolute;
     top:3800px;
-    left:519px;
+    left:50%;
     transform:translateX(-50%);
     width:auto;
     text-align:center;
@@ -367,6 +367,16 @@ body,td,th {
     left: 339px;
     top: 869px;
 }
+	
+	 /* CENTRER IMAGES SUR PC */
+	@media screen and (min-width: 769px) {
+
+    [id^="apDiv"] {
+        margin-left: calc(50vw - 519px - 1cm);
+    }
+
+}
+ 
 </style>
 	
 <script type="text/javascript">
